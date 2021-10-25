@@ -1,4 +1,4 @@
-package com.giacom
+package com.giacom.demo
 import io.micronaut.runtime.EmbeddedApplication
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
 import org.junit.jupiter.api.Assertions
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 import javax.inject.Inject
 
 @MicronautTest
-class MicronautDemoTest {
+class DemoTest {
 
     @Inject
     lateinit var application: EmbeddedApplication<*>

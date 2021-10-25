@@ -1,2 +1,2 @@
 
-rootProject.name="micronaut-demo"
+rootProject.name="demo"

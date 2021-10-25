@@ -4,11 +4,10 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.0.0"
     id("io.micronaut.application") version "1.5.4"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.4.32"
-    id("org.jetbrains.kotlin.plugin.jpa") version "1.4.32"
 }
 
 version = "0.1"
-group = "com.giacom"
+group = "com.giacom.demo"
 
 val kotlinVersion=project.properties.get("kotlinVersion")
 repositories {
@@ -20,40 +19,27 @@ micronaut {
     testRuntime("junit5")
     processing {
         incremental(true)
-        annotations("com.giacom.*")
+        annotations("com.giacom.demo.*")
     }
 }
 
 dependencies {
-    kapt("io.micronaut.data:micronaut-data-processor")
     implementation("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut:micronaut-management")
     implementation("io.micronaut:micronaut-runtime")
-    implementation("io.micronaut.aws:micronaut-aws-sdk-v2")
-    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
-    implementation("io.micronaut.kotlin:micronaut-kotlin-extension-functions")
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
-    implementation("io.micronaut.micrometer:micronaut-micrometer-core")
-    implementation("io.micronaut.micrometer:micronaut-micrometer-registry-appoptics")
-    implementation("io.micronaut.micrometer:micronaut-micrometer-registry-dynatrace")
-    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("javax.annotation:javax.annotation-api")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     runtimeOnly("ch.qos.logback:logback-classic")
-    runtimeOnly("com.h2database:h2")
-    testImplementation("org.assertj:assertj-core")
     implementation("io.micronaut:micronaut-validation")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
-
-    testImplementation("org.mockito:mockito-core")
 
 }
 
 
 application {
-    mainClass.set("com.giacom.ApplicationKt")
+    mainClass.set("com.giacom.demo.ApplicationKt")
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("11")
