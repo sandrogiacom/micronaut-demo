@@ -1,1 +1,1 @@
-build: ./gradlew clean build
+build: ./gradlew assemble

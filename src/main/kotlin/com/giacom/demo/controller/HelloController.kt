@@ -8,7 +8,7 @@ import io.micronaut.http.annotation.Get
 class HelloController {
 
     @Get
-    fun hello(name: String): Person {
-        return Person("Hello $name")
+    fun hello(): Person {
+        return Person("Hello micronaut!")
     }
 }
